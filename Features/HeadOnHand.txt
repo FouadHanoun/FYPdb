@@ -1,0 +1,87 @@
+
+Step 2 of 4: Generating a Pool of Weak Classifiers
+	Using Hands data: No
+	Using Skeleton data : Yes
+	 1/38 - Feature: DiffPositionX (80)
+	 2/38 - Feature: DiffPositionY (100)
+	 3/38 - Feature: DiffPositionZ (124)
+	 4/38 - Feature: Angles (880)
+	 5/38 - Feature: TimeSpaceAngles (477)
+	 6/38 - Feature: Speed (355)
+	 7/38 - Feature: VelocityX (265)
+	 8/38 - Feature: VelocityY (324)
+	 9/38 - Feature: VelocityZ (394)
+	10/38 - Feature: AngleVelocity (490)
+	11/38 - Feature: AngleAcceleration (554)
+	12/38 - Feature: MuscleForceX (104)
+	13/38 - Feature: MuscleForceY (165)
+	14/38 - Feature: MuscleForceZ (117)
+	15/38 - Feature: MuscleTorqueX (314)
+	16/38 - Feature: MuscleTorqueY (118)
+	17/38 - Feature: MuscleTorqueZ (212)
+	18/38 - Feature: MusclePower (145)
+	19/38 - Feature: DiffMuscleForceX (783)
+	20/38 - Feature: DiffMuscleForceY (618)
+	21/38 - Feature: DiffMuscleForceZ (659)
+	22/38 - Feature: VelocityX^2 (91)
+	23/38 - Feature: VelocityY^2 (119)
+	24/38 - Feature: VelocityZ^2 (139)
+	25/38 - Feature: Speed^2 (215)
+	26/38 - Feature: Acceleration (201)
+	27/38 - Feature: AccelerationX (67)
+	28/38 - Feature: AccelerationY (89)
+	29/38 - Feature: AccelerationZ (130)
+	30/38 - Feature: BoneLengthChanges (539)
+	31/38 - Feature: HandValueRaw (Excluded)
+	32/38 - Feature: HandValueMultiClass (Excluded)
+	33/38 - Feature: HandDifferenceRawBest (Excluded)
+	34/38 - Feature: HandDifferenceMultiClassBest (Excluded)
+	35/38 - Feature: HandDifferenceRaw (Excluded)
+	36/38 - Feature: HandDifferenceMultiClass (Excluded)
+	37/38 - Feature: RefinementWrist (Excluded)
+	38/38 - Feature: RefinmentHand (Excluded)
+	Total Classifiers Combined: 8868
+	Num weak classifiers generated: 8868
+	Duration: 0 minutes, 7 seconds
+Done
+
+
+Step 3 of 4: Training Strong Classifier
+	-Evaluating classifier data for each example skeleton frame...
+Done
+	-Running AdaBoost using 8 (of 8 available) hardware threads...
+Done
+	Num weak classifiers: 1000
+	Duration: 0 minutes, 1 seconds
+
+
+Step 4 of 4: Optimizing detection parameters
+	-Generate matrix of test results using different detection parameters...
+	Filtering 7 frames using detection threshold 0.049000
+	Duration: 0 minutes, 0 seconds
+Done
+
+
+Testing on Training Data
+    Raw Per Frame Results:
+	% Accuracy True Positives: 100.000000 % (351/351)
+	% Error False Positives: 0.000000 % (0/187)
+    Filtered Per Gesture Results:
+	% Accuracy True Positives: 100.000000 % (3/3)
+	% Error False Positives: 0.000000 % (0/3)
+
+Top 10 contributing weak classifiers:
+	DiffPositionX( HipRight, SpineShoulder ) using inferred joints, fValue < 0.000000, alpha = 2.683455
+	Angles( Head, ShoulderRight, HandRight ) using inferred joints, fValue < 42.000000, alpha = 2.450782
+	Angles( Head, ShoulderRight, ThumbRight ) using inferred joints, fValue < 38.000000, alpha = 1.470136
+	Angles( ShoulderLeft, SpineShoulder, ShoulderRight ) using inferred joints, fValue >= 142.000000, alpha = 1.449915
+	Angles( Head, ShoulderRight, SpineMid ) using inferred joints, fValue >= 96.000000, alpha = 1.424099
+	DiffMuscleForceY( WristRight, SpineShoulder ) using inferred joints, fValue < 0.400000, alpha = 1.390526
+	MusclePower( ThumbLeft ) using inferred joints, fValue < 0.000000, alpha = 1.272286
+	Angles( Head, ShoulderRight, ElbowRight ) using inferred joints, fValue < 102.000000, alpha = 1.201788
+	DiffMuscleForceY( WristRight, SpineShoulder ) rejecting inferred joints, fValue < 0.400000, alpha = 1.187207
+	MuscleForceZ( Neck ) using inferred joints, fValue >= 0.199997, alpha = 1.169478
+
+Done
+
+Training...Done. Took (8) seconds
